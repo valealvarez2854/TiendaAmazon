@@ -3,6 +3,10 @@ let nombreConsola;
 let precioConsola;
 let pesoConsola;
 let fotoConsola;
+let rallita=document.getElementById("rallita");
+let rallita2=document.getElementById("rallita2");
+let botoncop=document.getElementById("botoncop");
+//let fotoCarrito;
 
 //1. Controlar con JS el boton del formulario
 let boton=document.getElementById("boton");
@@ -25,8 +29,15 @@ function capturarDatos(){
     
     let pildora=document.getElementById("pildora");
     pildora.textContent=cantidad;
-    pildora.classList.remove("invisible");
-    pildora.classList.add("visible");
+   
+    pildora.classList.add("invisible");
+    
+    rallita.classList.add("invisible");
+    
+    rallita2.classList.add("invisible");
+    
+    
+
 
     
     let direccion=document.getElementById("comentarios").value;
@@ -38,24 +49,26 @@ function capturarDatos(){
     tituloCarrito.textContent=nombreConsola;
 
     let precioIndividual=document.getElementById("precioUnitarioCarrito");
-    precioIndividual.textContent=`Costo unitario: $${precioConsola} USD`;
+    precioIndividual.textContent=`Costo Unitario: $${precioConsola} USD`;
 
     let pesoIndividual=document.getElementById("pesoUnitarioCarrito");
-    pesoIndividual.textContent=`Peso unitario: ${pesoConsola} Lb`;
+    pesoIndividual.textContent=`Peso Unitario: ${pesoConsola} Lb`;
 
     let pesoTotal=document.getElementById("pesoTotalCarrito");
-    pesoTotal.textContent=`Peso Total del envio: ${pesoConsola*cantidad}Lb`;
+    pesoTotal.textContent=`Peso Total Del Envio: ${pesoConsola*cantidad}Lb`;
     
     let costoCasillero=document.getElementById("costoCasillero");
     costoCasillero.textContent=`Costo Casillero: $${calcularCostoCasillero(pesoConsola,cantidad)} USD`;
     
     let costoImpuestos=document.getElementById("costoImpuestos");
-    costoImpuestos.textContent=`Costo venta(impuestos):$${calcularCostoImpuestos(precioConsola,cantidad)}`;
+    costoImpuestos.textContent=`Costo Venta(impuestos):$${calcularCostoImpuestos(precioConsola,cantidad)}`;
 
     let costoTotal=document.getElementById("costoTotal");
     costoTotal.textContent=`Costo Total: $${(calcularCostoCasillero(pesoConsola,cantidad))+(calcularCostoImpuestos(precioConsola,cantidad))} USD`;
 
-
+    pildora.classList.add("visible");
+    rallita.classList.remove("invisible");
+    rallita2.classList.remove("invisible");
 }
 
 //5. Seleccionar la información de la consola segun la selección del usuario
@@ -136,5 +149,25 @@ function calcularCostoImpuestos(costoConsola,cantidad){
 function limpiarCarrito(){
 
     console.log("Hiciste clic en limpiar");
+    let fotoCarrito=document.getElementById("fotoCarrito");
+    fotoCarrito.src="https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/fotoCarrito.PNG?raw=true";
+    let tituloCarrito=document.getElementById("tituloCarrito");
+    tituloCarrito.textContent="Tu Carrito De Amazon Esta Vasio";
+    let precioIndividual=document.getElementById("precioUnitarioCarrito");
+    precioIndividual.textContent="";
+    let pesoIndividual=document.getElementById("pesoUnitarioCarrito");
+    pesoIndividual.textContent="";
+    let pesoTotal=document.getElementById("pesoTotalCarrito");
+    pesoTotal.textContent="";
+    let costoCasillero=document.getElementById("costoCasillero");
+    costoCasillero.textContent="";
+    let costoImpuestos=document.getElementById("costoImpuestos");
+    costoImpuestos.textContent="";
+    let costoTotal=document.getElementById("costoTotal");
+    costoTotal.textContent="";
+  
+    rallita.classList.add("invisible")
+    rallita2.classList.add("invisible")
+
 
 }

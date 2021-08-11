@@ -15,6 +15,7 @@
               
                 <a class="navbar-brand" href="#">
                     <img src="img/amazon.png" alt="logo" height="30">
+                    <i class="fab fa-amazon"></i>
                 </a>
 
 
@@ -107,7 +108,7 @@
                         <div class="mb-3">
                             <label class="form-label">Selecciona consola:</label>
                             <select class="form-select" id="productos">
-                                <option value="1" selected>PS5</option>
+                                <option value="1" >PS5</option>
                                 <option value="2">XBOX X SERIES</option>
                                 <option value="3">NINTENDO SWITCH</option>
                             </select>
@@ -126,7 +127,7 @@
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button class="btn btn-primary" type="button" id="boton">Agregar al carrito</button>
+                            <button class="btn-success" type="button" id="boton">Agregar Al Carrito</button>
                         </div>
 
 
@@ -155,7 +156,7 @@
 
                     <img src="https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/fotoCarrito.PNG?raw=true" alt="fotocarrito" class="img-fluid" id="fotoCarrito">
 
-                    <hr>
+                    <hr id="rallita2">
                     <p id="pesoTotalCarrito"></p>
                     <p id="costoCasillero" class="fw-bold"></p>
 
@@ -163,13 +164,15 @@
                   </div>
                   <div class="col-6">
 
-                    <h5 id="tituloCarrito">Tu Carrito de Amazon está vacío</h5>
+                    <h5 id="tituloCarrito">Tu Carrito De Amazon Está Vacío</h5>
                     <p id="precioUnitarioCarrito"></p>
                     <p id="pesoUnitarioCarrito"></p>
 
-                    <hr>
+                    <hr id="rallita">
                     <p id="costoImpuestos" class="fw-bold"></p>
                     <h5 id="costoTotal" class="text-success fw-bold"></h5>
+                    <br>
+                    <button type="button" class="btn-success" id="botoncop">COP<i class="far fa-money-bill-alt"></i></button>
 
 
 
@@ -180,8 +183,12 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-warning" id="botonLimpiar">Limpiar<i class="ms-2 fas fa-trash-alt"></i></button>
-              <button type="button" class="btn btn-dark">Comprar</button>
+              <button type="button" class="btn-danger" id="botonLimpiar">Limpiar<i class="ms-2 fas fa-trash-alt"></i></button>
+              <button type="button" class="btn-success">Comprar</button>
+              
+              
+              
+
             </div>
           </div>
         </div>
