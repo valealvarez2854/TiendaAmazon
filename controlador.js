@@ -5,29 +5,35 @@ let pesoConsola;
 let fotoConsola;
 let rallita=document.getElementById("rallita");
 let rallita2=document.getElementById("rallita2");
-let botoncop=document.getElementById("botoncop");
+
 //let fotoCarrito;
 
 //1. Controlar con JS el boton del formulario
 let boton=document.getElementById("boton");
 let botonLimpiar=document.getElementById("botonLimpiar");
+let botoncop=document.getElementById("botoncom");
 
 //2. Detectar el clic en el boton
 boton.addEventListener("click",capturarDatos);
 botonLimpiar.addEventListener("click",limpiarCarrito);
 
+
 //3. Crear funcion PROPIA que se llamo en el punto 2
 function capturarDatos(){
+
+  
 
     //4. Capturar los valores del formulario
     // creo tantas variables como valores del formulario
 
-    let consolaElegida=document.getElementById("productos").value;
+    /*let consolaElegida=document.getElementById("productos").value;
     seleccionarConsola(consolaElegida);
 
     let cantidad=document.getElementById("cantidad").value;
+
+  
     
-    let pildora=document.getElementById("pildora");
+    /*let pildora=document.getElementById("pildora");
     pildora.textContent=cantidad;
    
     pildora.classList.add("invisible");
@@ -68,17 +74,17 @@ function capturarDatos(){
 
     pildora.classList.add("visible");
     rallita.classList.remove("invisible");
-    rallita2.classList.remove("invisible");
+    rallita2.classList.remove("invisible");*/
 }
 
 //5. Seleccionar la información de la consola segun la selección del usuario
 function seleccionarConsola(opcion){
 
     let consolas={
-        nombres:Array("PS5","XBOX Serie X", "Nintendo Switch"),
-        precios:Array(750,700,409),
-        pesos:Array(14.2,13.1,4.75),
-        fotos:Array("https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/ps5.jpg?raw=true","https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/xbox.jpg?raw=true","https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/nintendo.jpg?raw=true"),
+        nombres:Array("PS5","XBOX Serie X", "Nintendo Switch", "CARGADOR MANDO PS5", "CARGADOR MANDO XBOX", "CARGADOR MANDO NINTENDO"),
+        precios:Array(750,700,409, 17.99,19.99 ,17.99 ),
+        pesos:Array(14.2,13.1,4.75,8,10,01),
+        fotos:Array("img/5play.jpg","img/nintendocargador.jpg","img/xbox.jpg","img/cargadorpd5.webp","img/nintendocargador.jpg","img/xboxcargador.jpg"),
         
     }
 
@@ -102,6 +108,27 @@ function seleccionarConsola(opcion){
         precioConsola=consolas.precios[2];
         pesoConsola=consolas.pesos[2];
         fotoConsola=consolas.fotos[2];
+
+    }else if(opcion==4){
+
+        nombreConsola=consolas.nombres[3];
+        precioConsola=consolas.precios[3];
+        pesoConsola=consolas.pesos[3];
+        fotoConsola=consolas.fotos[3];
+
+    }else if(opcion==5){
+
+        nombreConsola=consolas.nombres[4];
+        precioConsola=consolas.precios[4];
+        pesoConsola=consolas.pesos[4];
+        fotoConsola=consolas.fotos[4];
+
+    }else if(opcion==6){
+
+        nombreConsola=consolas.nombres[5];
+        precioConsola=consolas.precios[5];
+        pesoConsola=consolas.pesos[5];
+        fotoConsola=consolas.fotos[5];
 
     }else{
         nombreConsola=null;
@@ -170,4 +197,7 @@ function limpiarCarrito(){
     rallita2.classList.add("invisible")
 
 
+}
+function botoncop(){
+ console.log("hiciste clic en cop");
 }
