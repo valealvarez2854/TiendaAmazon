@@ -26,14 +26,14 @@ function capturarDatos(){
     //4. Capturar los valores del formulario
     // creo tantas variables como valores del formulario
 
-    /*let consolaElegida=document.getElementById("productos").value;
+    let consolaElegida=document.getElementById("productos").value;
     seleccionarConsola(consolaElegida);
 
     let cantidad=document.getElementById("cantidad").value;
 
   
     
-    /*let pildora=document.getElementById("pildora");
+    let pildora=document.getElementById("pildora");
     pildora.textContent=cantidad;
    
     pildora.classList.add("invisible");
@@ -74,7 +74,7 @@ function capturarDatos(){
 
     pildora.classList.add("visible");
     rallita.classList.remove("invisible");
-    rallita2.classList.remove("invisible");*/
+    rallita2.classList.remove("invisible");
 }
 
 //5. Seleccionar la información de la consola segun la selección del usuario
