@@ -3,25 +3,22 @@ let nombreConsola;
 let precioConsola;
 let pesoConsola;
 let fotoConsola;
-let rallita=document.getElementById("rallita");
-let rallita2=document.getElementById("rallita2");
+let raya=document.getElementById("raya");
+let raya2=document.getElementById("raya2");
 
-//let fotoCarrito;
 
 //1. Controlar con JS el boton del formulario
 let boton=document.getElementById("boton");
 let botonLimpiar=document.getElementById("botonLimpiar");
-let botoncop=document.getElementById("botoncom");
+let botoncop=document.getElementById("botoncop");
 
 //2. Detectar el clic en el boton
 boton.addEventListener("click",capturarDatos);
 botonLimpiar.addEventListener("click",limpiarCarrito);
-
+botoncop.addEventListener("click",convertir);
 
 //3. Crear funcion PROPIA que se llamo en el punto 2
 function capturarDatos(){
-
-  
 
     //4. Capturar los valores del formulario
     // creo tantas variables como valores del formulario
@@ -30,20 +27,13 @@ function capturarDatos(){
     seleccionarConsola(consolaElegida);
 
     let cantidad=document.getElementById("cantidad").value;
-
-  
     
     let pildora=document.getElementById("pildora");
     pildora.textContent=cantidad;
-   
-    pildora.classList.add("invisible");
-    
-    rallita.classList.add("invisible");
-    
-    rallita2.classList.add("invisible");
+    pildora.classList.remove("invisible");
+    pildora.classList.add("visible");
     
     
-
 
     
     let direccion=document.getElementById("comentarios").value;
@@ -55,36 +45,37 @@ function capturarDatos(){
     tituloCarrito.textContent=nombreConsola;
 
     let precioIndividual=document.getElementById("precioUnitarioCarrito");
-    precioIndividual.textContent=`Costo Unitario: $${precioConsola} USD`;
+    precioIndividual.textContent=`Costo unitario: $${precioConsola} USD`;
 
     let pesoIndividual=document.getElementById("pesoUnitarioCarrito");
-    pesoIndividual.textContent=`Peso Unitario: ${pesoConsola} Lb`;
+    pesoIndividual.textContent=`Peso unitario: ${pesoConsola} Lb`;
 
     let pesoTotal=document.getElementById("pesoTotalCarrito");
-    pesoTotal.textContent=`Peso Total Del Envio: ${pesoConsola*cantidad}Lb`;
+    pesoTotal.textContent=`Peso Total del envio: ${pesoConsola*cantidad}Lb`;
     
     let costoCasillero=document.getElementById("costoCasillero");
     costoCasillero.textContent=`Costo Casillero: $${calcularCostoCasillero(pesoConsola,cantidad)} USD`;
     
     let costoImpuestos=document.getElementById("costoImpuestos");
-    costoImpuestos.textContent=`Costo Venta(impuestos):$${calcularCostoImpuestos(precioConsola,cantidad)}`;
+    costoImpuestos.textContent=`Costo venta(impuestos):$${calcularCostoImpuestos(precioConsola,cantidad)}`;
 
     let costoTotal=document.getElementById("costoTotal");
     costoTotal.textContent=`Costo Total: $${(calcularCostoCasillero(pesoConsola,cantidad))+(calcularCostoImpuestos(precioConsola,cantidad))} USD`;
+    
+    let precioDolar=document.getElementById("costoDolar")
+  
 
-    pildora.classList.add("visible");
-    rallita.classList.remove("invisible");
-    rallita2.classList.remove("invisible");
+
 }
 
 //5. Seleccionar la información de la consola segun la selección del usuario
 function seleccionarConsola(opcion){
 
     let consolas={
-        nombres:Array("PS5","XBOX Serie X", "Nintendo Switch", "CARGADOR MANDO PS5", "CARGADOR MANDO XBOX", "CARGADOR MANDO NINTENDO"),
-        precios:Array(750,700,409, 17.99,19.99 ,17.99 ),
-        pesos:Array(14.2,13.1,4.75,8,10,01),
-        fotos:Array("img/5play.jpg","img/nintendocargador.jpg","img/xbox.jpg","img/cargadorpd5.webp","img/nintendocargador.jpg","img/xboxcargador.jpg"),
+        nombres:Array("PS5","XBOX Serie X","Nintendo Switch","CARGADOR MANDO PS5","CARGADOR MANDO XBOX SERIE X","CARGADOR MANDO NINTENDO SWITCH"),
+        precios:Array(750,700,409,21.99,13.99,19.66),
+        pesos:Array(14.2,13.1,4.75,0.7275,0.489375,0.1675),
+        fotos:Array("img/5play.jpg","img/xbox.jpg","img/nintendo.png","img/cargadormandops5.jpg","img/cargadormandoseriex.jpg","img/cargadormandonintendo.jpg"),
         
     }
 
@@ -192,12 +183,18 @@ function limpiarCarrito(){
     costoImpuestos.textContent="";
     let costoTotal=document.getElementById("costoTotal");
     costoTotal.textContent="";
-  
-    rallita.classList.add("invisible")
-    rallita2.classList.add("invisible")
+    
+    pildora.classList.add("invisible");
+    raya.classList.add("invisible");
+    raya2.classList.add("invisible");
 
+  
+   
 
 }
-function botoncop(){
- console.log("hiciste clic en cop");
+ 
+function convertir(){
+    console.log("Hiciste clic en convertir");
+    
+
 }
