@@ -1,8 +1,8 @@
 //CONTROLAR LA ACTIVIDAD DEL FORMULARIO
-let nombreConsola;
-let precioConsola;
-let pesoConsola;
-let fotoConsola;
+let nombreproducto;
+let precioproducto;
+let pesoproducto;
+let fotoproducto;
 let raya=document.getElementById("raya");
 let raya2=document.getElementById("raya2");
 
@@ -23,8 +23,8 @@ function capturarDatos(){
     //4. Capturar los valores del formulario
     // creo tantas variables como valores del formulario
 
-    let consolaElegida=document.getElementById("productos").value;
-    seleccionarConsola(consolaElegida);
+    let productoelegido=document.getElementById("productos").value;
+    seleccionarproducto(productoelegido);
 
     let cantidad=document.getElementById("cantidad").value;
     
@@ -39,28 +39,28 @@ function capturarDatos(){
     let direccion=document.getElementById("comentarios").value;
     
     let fotoCarrito=document.getElementById("fotoCarrito");
-    fotoCarrito.src=fotoConsola;
+    fotoCarrito.src=fotoproducto;
 
     let tituloCarrito=document.getElementById("tituloCarrito");
-    tituloCarrito.textContent=nombreConsola;
+    tituloCarrito.textContent=nombreproducto;
 
     let precioIndividual=document.getElementById("precioUnitarioCarrito");
-    precioIndividual.textContent=`Costo unitario: $${precioConsola} USD`;
+    precioIndividual.textContent=`Costo unitario: $${precioproducto} USD`;
 
     let pesoIndividual=document.getElementById("pesoUnitarioCarrito");
-    pesoIndividual.textContent=`Peso unitario: ${pesoConsola} Lb`;
+    pesoIndividual.textContent=`Peso unitario: ${pesoproducto} Lb`;
 
     let pesoTotal=document.getElementById("pesoTotalCarrito");
-    pesoTotal.textContent=`Peso Total del envio: ${pesoConsola*cantidad}Lb`;
+    pesoTotal.textContent=`Peso Total del envio: ${pesoproducto*cantidad}Lb`;
     
     let costoCasillero=document.getElementById("costoCasillero");
-    costoCasillero.textContent=`Costo Casillero: $${calcularCostoCasillero(pesoConsola,cantidad)} USD`;
+    costoCasillero.textContent=`Costo Casillero: $${calcularCostoCasillero(pesoproducto,cantidad)} USD`;
     
     let costoImpuestos=document.getElementById("costoImpuestos");
-    costoImpuestos.textContent=`Costo venta(impuestos):$${calcularCostoImpuestos(precioConsola,cantidad)}`;
+    costoImpuestos.textContent=`Costo venta(impuestos):$${calcularCostoImpuestos(precioproducto,cantidad)}`;
 
     let costoTotal=document.getElementById("costoTotal");
-    costoTotal.textContent=`Costo Total: $${(calcularCostoCasillero(pesoConsola,cantidad))+(calcularCostoImpuestos(precioConsola,cantidad))} USD`;
+    costoTotal.textContent=`Costo Total: $${(calcularCostoCasillero(pesoproducto,cantidad))+(calcularCostoImpuestos(precioproducto,cantidad))} USD`;
     
     let precioDolar=document.getElementById("costoDolar")
   
@@ -69,73 +69,80 @@ function capturarDatos(){
 }
 
 //5. Seleccionar la información de la consola segun la selección del usuario
-function seleccionarConsola(opcion){
+function seleccionarproducto(opcion){
 
-    let consolas={
-        nombres:Array("PS5","XBOX Serie X","Nintendo Switch","CARGADOR MANDO PS5","CARGADOR MANDO XBOX SERIE X","CARGADOR MANDO NINTENDO SWITCH"),
-        precios:Array(750,700,409,21.99,13.99,19.66),
-        pesos:Array(14.2,13.1,4.75,0.7275,0.489375,0.1675),
-        fotos:Array("img/5play.jpg","img/xbox.jpg","img/nintendo.png","img/cargadormandops5.jpg","img/cargadormandoseriex.jpg","img/cargadormandonintendo.jpg"),
+    let producto={
+        nombres:Array("Caja de arena autolimpiante","Comedero Neater Pet Brand","Fuente de agua de acero inoxidable ","PUPPBUDD cama ","Pet Gear-Cochecito"," Removedor de pelo para mascotas para muebles","Alimentador automatico","Domaker Asiento elevador de coche","Guante removedor de pelo de mascotas","Percha para ventana de gato","GAPZER Mochila para mascota","Viglley Washable Dog Pee Pads"," Toalla de baño","Corta uñas para mascotas"),
+        precios:Array(139.95,59.99,40.75,21.99,35.99 ,19.66,58.99,12.99,20.99,41.59,37.95,15.99,8.49 ),
+        pesos:Array(14.2,13.1,4.75,0.7275,0.489375,0.1675,452,15.7,39.7,10.2,10.2,27.6,0.19),
+        fotos:Array("img/arenero,jpg","img/comedero.jpg","img/fuente.jpg","img/cama.jpg","img/coche.jpg","img/cargadormandonintendo.jpg","img/removedor.jpg","img/alimentador.jpg","img/asiento.jpg","img/guante.jpg","img/percha.jpg","img/mochila.jpg","img/corral.jpg","img/toalla.jpg","img/cortauñas.jpg"),
         
     }
 
     if(opcion==1){
 
-        nombreConsola=consolas.nombres[0];
-        precioConsola=consolas.precios[0];
-        pesoConsola=consolas.pesos[0];
-        fotoConsola=consolas.fotos[0];
+        nombreproducto=producto.nombres[0];
+        precioproducto=producto.precios[0];
+        pesoproducto=producto.pesos[0];
+        fotoproducto=consolas.fotos[0];
 
     }else if(opcion==2){
 
-        nombreConsola=consolas.nombres[1];
-        precioConsola=consolas.precios[1];
-        pesoConsola=consolas.pesos[1];
-        fotoConsola=consolas.fotos[1];
+        noombreproducto=producto.nombres[1];
+        precioproducto=producto.precios[1];
+        pesoproducto=producto.pesos[1];
+        fotoproducto=producto.fotos[1];
 
     }else if(opcion==3){
 
-        nombreConsola=consolas.nombres[2];
-        precioConsola=consolas.precios[2];
-        pesoConsola=consolas.pesos[2];
-        fotoConsola=consolas.fotos[2];
+        noombreproducto=producto.nombres[2];
+        precioproducto=producto.precios[2];
+        pesoproducto=producto.pesos[2];
+        fotoproducto=producto.fotos[2];
 
     }else if(opcion==4){
 
-        nombreConsola=consolas.nombres[3];
-        precioConsola=consolas.precios[3];
-        pesoConsola=consolas.pesos[3];
-        fotoConsola=consolas.fotos[3];
+        nombreproducto=producto.nombres[3];
+        precioConsola=producto.precios[3];
+        pesoConsola=producto.pesos[3];
+        fotoConsola=producto.fotos[3];
 
     }else if(opcion==5){
 
-        nombreConsola=consolas.nombres[4];
-        precioConsola=consolas.precios[4];
-        pesoConsola=consolas.pesos[4];
-        fotoConsola=consolas.fotos[4];
+        nombreproducto=producto.nombres[4];
+        precioproducto=producto.precios[4];
+        pesoproducto=producto.pesos[4];
+        fotoproducto=producto.fotos[4];
 
     }else if(opcion==6){
 
-        nombreConsola=consolas.nombres[5];
-        precioConsola=consolas.precios[5];
-        pesoConsola=consolas.pesos[5];
-        fotoConsola=consolas.fotos[5];
+        nombreproducto=producto.nombres[5];
+        precioproducto=producto.precios[5];
+        pesoproducto=producto.pesos[5];
+        fotoproducto=producto.fotos[5];
+
+    }else if(opcion==7){
+
+        nombreproducto=producto.nombres[6];
+        precioproducto=producto.precios[6];
+        pesoproducto=producto.pesos[6];
+        fotoproducto=producto.fotos[6];
 
     }else{
-        nombreConsola=null;
-        precioConsola=null;
-        pesoConsola=null;
-        fotoConsola=null;
+        nombreproducto=null;
+        precioproducto=null;
+        pesoproducto=null;
+        fotoproducto=null;
 
     }
 
 
 }
 
-function calcularCostoCasillero(pesoConsola,cantidad){
+function calcularCostoCasillero(pesoproducto,cantidad){
 
     let costoCasillero=0;
-    let pesoTotalEnvio=pesoConsola*cantidad;
+    let pesoTotalEnvio=pesoproducto*cantidad;
 
     if(pesoTotalEnvio<=20){
 
@@ -151,12 +158,12 @@ function calcularCostoCasillero(pesoConsola,cantidad){
     return costoCasillero;
 }
 
-function calcularCostoImpuestos(costoConsola,cantidad){
+function calcularCostoImpuestos(costoproducto,cantidad){
 
     const IMPUESTO_PAIS=114;
     const VALOR_SEGURO=7;
 
-    let costoCompra=costoConsola*cantidad;
+    let costoCompra=costoproducto*cantidad;
     let costoTotal=costoCompra+IMPUESTO_PAIS+VALOR_SEGURO;
 
     return costoTotal;
