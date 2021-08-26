@@ -73,9 +73,9 @@ function seleccionarproducto(opcion){
 
     let producto={
         nombres:Array("Caja de arena autolimpiante","Comedero Neater Pet Brand","Fuente de agua de acero inoxidable ","PUPPBUDD cama ","Pet Gear-Cochecito"," Removedor de pelo para mascotas para muebles","Alimentador automatico","Domaker Asiento elevador de coche","Guante removedor de pelo de mascotas","Percha para ventana de gato","GAPZER Mochila para mascota","Viglley Washable Dog Pee Pads"," Toalla de baño","Corta uñas para mascotas"),
-        precios:Array(139.95,59.99,40.75,21.99,35.99 ,19.66,58.99,12.99,20.99,41.59,37.95,15.99,8.49 ),
-        pesos:Array(14.2,13.1,4.75,0.7275,0.489375,0.1675,452,15.7,39.7,10.2,10.2,27.6,0.19),
-        fotos:Array("img/arenero,jpg","img/comedero.jpg","img/fuente.jpg","img/cama.jpg","img/coche.jpg","img/cargadormandonintendo.jpg","img/removedor.jpg","img/alimentador.jpg","img/asiento.jpg","img/guante.jpg","img/percha.jpg","img/mochila.jpg","img/corral.jpg","img/toalla.jpg","img/cortauñas.jpg"),
+        precios:Array(139.95,59.99,40.75,21.99,35.99 ,19.66,58.99,12.99,20.99,41.59,37.95,15.99,8.49,4.20,520 ),
+        pesos:Array(14.2,13.1,4.75,0.7275,0.489375,0.1675,452,15.7,39.7,10.2,10.2,27.6,0.19,520,680,40.0),
+        fotos:Array("img/arenero,jpg","img/comedero.jpg","img/fuente.jpg","img/cama.jpg","img/coche.jpg","img/removedor.jpg","img/alimentador.jpg","img/asiento.jpg","img/guante.jpg","img/percha.jpg","img/mochila.jpg","img/corral.jpg","img/toalla.jpg","img/cortauñas.jpg"),
         
     }
 
@@ -127,6 +127,61 @@ function seleccionarproducto(opcion){
         precioproducto=producto.precios[6];
         pesoproducto=producto.pesos[6];
         fotoproducto=producto.fotos[6];
+
+    }else if(opcion==8){
+
+        nombreproducto=producto.nombres[7];
+        precioproducto=producto.precios[7];
+        pesoproducto=producto.pesos[7];
+        fotoproducto=producto.fotos[7];
+
+    }else if(opcion==9){9
+        nombreproducto=producto.nombres[8];
+        precioproducto=producto.precios[8];
+        pesoproducto=producto.pesos[8];
+        fotoproducto=producto.fotos[8];
+
+    }else if(opcion==10){
+
+        nombreproducto=producto.nombres[9];
+        precioproducto=producto.precios[9];
+        pesoproducto=producto.pesos[9];
+        fotoproducto=producto.fotos[9];
+
+    }else if(opcion==11){
+
+        nombreproducto=producto.nombres[10];
+        precioproducto=producto.precios[10];
+        pesoproducto=producto.pesos[10];
+        fotoproducto=producto.fotos[10];
+
+    }else if(opcion==12){
+
+        nombreproducto=producto.nombres[11];
+        precioproducto=producto.precios[11];
+        pesoproducto=producto.pesos[11];
+        fotoproducto=producto.fotos[11];
+
+    }else if(opcion==13){
+
+        nombreproducto=producto.nombres[12];
+        precioproducto=producto.precios[12];
+        pesoproducto=producto.pesos[12];
+        fotoproducto=producto.fotos[12];
+
+    }else if(opcion==14){
+
+        nombreproducto=producto.nombres[13];
+        precioproducto=producto.precios[13];
+        pesoproducto=producto.pesos[13];
+        fotoproducto=producto.fotos[13];
+
+    }else if(opcion==15){
+
+        nombreproducto=producto.nombres[14];
+        precioproducto=producto.precios[14];
+        pesoproducto=producto.pesos[14];
+        fotoproducto=producto.fotos[14];
 
     }else{
         nombreproducto=null;
@@ -199,9 +254,26 @@ function limpiarCarrito(){
    
 
 }
- 
 function convertir(){
-    console.log("Hiciste clic en convertir");
-    
+
+    moneda=true;
+
+    let botoncop=document.getElementById("convertir");
+    botoncop.textContent="cop ($)"
+
+    let cantidad=document.getElementById("cantidad").value;
+
+    let precioIndividual=document.getElementById("precioUnitarioCarrito");
+    precioIndividual.textContent=`Costo unitario: $${precioproducto} USD`;
+
+    let costoCasillero=document.getElementById("costoCasillero");
+    costoCasillero.textContent=`Costo Casillero: $${calcularCostoCasillero(pesoproducto,cantidad)} USD`;
+
+    let costoImpuestos=document.getElementById("costoImpuestos");
+    costoImpuestos.textContent=`Costo venta(impuestos):$${calcularCostoImpuestos(precioproducto,cantidad)} USD`;
+
+    let costoTotal=document.getElementById("costoTotal");
+    costoTotal.textContent=`Costo Total: $${(calcularCostoCasillero(pesoproducto,cantidad))+(calcularCostoImpuestos(precioproducto,cantidad))} USD`;
 
 }
+ 
