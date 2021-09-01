@@ -276,4 +276,3 @@ function convertir(){
     costoTotal.textContent=`Costo Total: $${(calcularCostoCasillero(pesoproducto,cantidad))+(calcularCostoImpuestos(precioproducto,cantidad))} USD`;
 
 }
- 
