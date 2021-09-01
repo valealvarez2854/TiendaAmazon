@@ -72,10 +72,10 @@ function capturarDatos(){
 function seleccionarproducto(opcion){
 
     let producto={
-        nombres:Array("Caja de arena autolimpiante","Comedero Neater Pet Brand","Fuente de agua de acero inoxidable ","PUPPBUDD cama ","Pet Gear-Cochecito"," Removedor de pelo para mascotas para muebles","Alimentador automatico","Domaker Asiento elevador de coche","Guante removedor de pelo de mascotas","Percha para ventana de gato","GAPZER Mochila para mascota","Viglley Washable Dog Pee Pads"," Toalla de baño","Corta uñas para mascotas"),
-        precios:Array(139.95,59.99,40.75,21.99,35.99 ,19.66,58.99,12.99,20.99,41.59,37.95,15.99,8.49,4.20,520 ),
-        pesos:Array(14.2,13.1,4.75,0.7275,0.489375,0.1675,452,15.7,39.7,10.2,10.2,27.6,0.19,520,680,40.0),
-        fotos:Array("img/arenero,jpg","img/comedero.jpg","img/fuente.jpg","img/cama.jpg","img/coche.jpg","img/removedor.jpg","img/alimentador.jpg","img/asiento.jpg","img/guante.jpg","img/percha.jpg","img/mochila.jpg","img/corral.jpg","img/toalla.jpg","img/cortauñas.jpg"),
+        nombres:Array("Caja de arena autolimpiante","Comedero Neater Pet Brand","Fuente de agua de acero inoxidable ","PUPPBUDD cama ","Pet Gear-Cochecito"," Removedor de pelo para mascotas para muebles","Alimentador automatico","Domaker Asiento elevador de coche","Guante removedor de pelo de mascotas","Percha para ventana de gato","GAPZER Mochila para mascota","Viglley Washable Dog Pee Pads"," Toalla de baño","Corta uñas para mascotas","Rastreador GPS Para Mascotas "),
+        precios:Array(139.95,59.99,40.75,5555,21.99,35.99 ,19.66,58.99,12.99,20.99,41.59,37.95,15.99,8.49,4.20,520,209.99 ),
+        pesos:Array(14.2,13.1,4.75,0.7275,5555,0.489375,0.1675,452,15.7,39.7,10.2,10.2,27.6,0.19,520,680,40.0,0.6),
+        fotos:Array("img/arenero,jpg","img/comedero.jpg","img/fuente.jpg","img/cama.jpg","img/coche.jpg","img/removedor.jpg","img/alimentador.jpg","img/asiento.jpg","img/guante.jpg","img/percha.jpg","img/mochila.jpg","img/corral.jpg","img/toalla.jpg","img/cortauñas.jpg","img/gps.jpg"),
         
     }
 
@@ -230,7 +230,7 @@ function limpiarCarrito(){
 
     console.log("Hiciste clic en limpiar");
     let fotoCarrito=document.getElementById("fotoCarrito");
-    fotoCarrito.src="https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/fotoCarrito.PNG?raw=true";
+    fotoCarrito.src="https://image.flaticon.com/icons/png/512/107/107831.png";
     let tituloCarrito=document.getElementById("tituloCarrito");
     tituloCarrito.textContent="Tu Carrito De Amazon Esta Vasio";
     let precioIndividual=document.getElementById("precioUnitarioCarrito");
