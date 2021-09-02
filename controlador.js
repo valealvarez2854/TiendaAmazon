@@ -11,11 +11,13 @@ let raya2=document.getElementById("raya2");
 let boton=document.getElementById("boton");
 let botonLimpiar=document.getElementById("botonLimpiar");
 let botoncop=document.getElementById("botoncop");
+let botonUSD=document.getElementById("botonUSD");
 
 //2. Detectar el clic en el boton
 boton.addEventListener("click",capturarDatos);
 botonLimpiar.addEventListener("click",limpiarCarrito);
 botoncop.addEventListener("click",convertir);
+botonUSD.addEventListener("clic",convertidorUSB);
 
 
 //3. Crear funcion PROPIA que se llamo en el punto 2
@@ -33,7 +35,9 @@ function capturarDatos(){
     pildora.textContent=cantidad;
     pildora.classList.remove("invisible");
     pildora.classList.add("visible");
-    botoncop.classList.add("visible")
+    botoncop.classList.add("visible");
+    botonUSD.classList.add("visible");
+
     
     
 
@@ -272,8 +276,8 @@ function convertir(){
     let costoTotal=document.getElementById("costoTotal");
     costoTotal.textContent=`Costo Total: $${(convertiraPesos(calcularCostoCasillero(pesoproducto,cantidad))+(calcularCostoImpuestos(precioproducto,cantidad)))} COP`;
     
-    /*convertidor2.classList.remove("invisible")
-    convertidor2.classList.add("visible");*/
+    convertidorUSB.classList.remove("invisible")
+    convertidorUSB.classList.add("visible");
 
     
 
@@ -285,6 +289,28 @@ function convertiraPesos(precioDolares){
 
     return precioPesos;
 
+
+
+}
+
+function convertidorUSB(){
+    let cantidad=document.getElementById("cantidad").value;
+
+    let precioIndividual=document.getElementById("precioUnitarioCarrito");
+    precioIndividual.textContent=`Costo unitario: $${(precioproducto)} USD`;
+
+    let costoCasillero=document.getElementById("costoCasillero");
+    costoCasillero.textContent=`Costo Casillero: $${(calcularCostoCasillero(precioproducto,cantidad))} UDS`;
+
+    let costoImpuestos=document.getElementById("costoImpuestos");
+    costoImpuestos.textContent=`Costo venta(impuestos):$${(calcularCostoImpuestos(precioproducto,cantidad))}UDS`;
+
+    let costoTotal=document.getElementById("costoTotal");
+    costoTotal.textContent=`Costo Total: $${((calcularCostoCasillero(pesoproducto,cantidad))+(calcularCostoImpuestos(precioproducto,cantidad)))} USD`;
+
+    conventir.classList.remove("invisible")
+    conventir.classList.add("visible");
+    
 
 
 }
