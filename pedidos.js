@@ -152,6 +152,7 @@ pedidos.forEach(function(pedido){
 
     let imagen=document.createElement("img");
     imagen.classList.add("card-img-top");
+    imagen.classList.add("img-fluid");
     imagen.src=pedido.foto;
 
     let cuerpo=document.createElement("div");
@@ -174,35 +175,40 @@ pedidos.forEach(function(pedido){
    texto3.textContent=`cantidad:${pedido.cantidad}`;
 
 
-   let boton=document.createElement("butoon");
-   boton.classList.add("btn-outline-green");
-   boton.classList.add("col-mb-5");
+   let boton=document.createElement("button");
+   boton.classList.add("btn");
+   boton.classList.add("btn-outline-success");
+   boton.classList.add("btn-dark");
+   boton.classList.add("w-100");
 
-   let boton2=document.createElement("butoon");       
-  boton2.classList.add("btn-outline-green");
-  boton2.classList.add("col-mb-5");
-  boton2.classList.add("ms-2"); 
+    let boton2=document.createElement("button");
+    boton2.classList.add("btn");       
+    boton2.classList.add("btn-dark");
+    boton2.classList.add("btn-outline-danger");
+    boton2.classList.add("w-100");
+    boton2.classList.add("mt-3");
 
-  let icono=document.createElement("i");
-  icono=classList.add("fa-trash-alt");
-  icono=classList.add("fas"); 
+    let icono=document.createElement("i");
+    icono.classList.add("fa-pencil-alt");
+    icono.classList.add("fas"); 
 
-let icono2=document.createElement("i");
-icono2=classList.add("fa-pencil-alt");
-icono2=classList.add("fas"); 
+    let icono2=document.createElement("i");
+    icono2.classList.add("fa-trash-alt");
+    icono2.classList.add("fas"); 
 
-   cuerpo.appendChild(titulo)
-   cuerpo.appendChild(texto)
-   cuerpo.appendChild(texto2)
-   cuerpo.appendChild(texto3)
-   cuerpo.appendChild(boton)
-   cuerpo.appendChild(boton2)
-   boton.appendChild(icono)
-   boton2.appendChild(icono2)
-   tarjeta.appendChild(imagen)
-   tarjeta.appendChild(cuerpo)
-   columna.appendChild(tarjeta)
-   contenedorPadre.appendChild(columna)
+
+    boton.appendChild(icono)
+    boton2.appendChild(icono2)
+    cuerpo.appendChild(titulo)
+    cuerpo.appendChild(texto)
+    cuerpo.appendChild(texto2)
+    cuerpo.appendChild(texto3)
+    cuerpo.appendChild(boton)
+    cuerpo.appendChild(boton2)
+    tarjeta.appendChild(imagen)
+    tarjeta.appendChild(cuerpo)
+    columna.appendChild(tarjeta)
+    contenedorPadre.appendChild(columna)
 
 
 

@@ -17,6 +17,7 @@ boton.addEventListener("click",capturarDatos);
 botonLimpiar.addEventListener("click",limpiarCarrito);
 botoncop.addEventListener("click",convertir);
 
+
 //3. Crear funcion PROPIA que se llamo en el punto 2
 function capturarDatos(){
 
@@ -32,6 +33,7 @@ function capturarDatos(){
     pildora.textContent=cantidad;
     pildora.classList.remove("invisible");
     pildora.classList.add("visible");
+    botoncop.classList.add("visible")
     
     
 
@@ -256,23 +258,33 @@ function limpiarCarrito(){
 }
 function convertir(){
 
-    moneda=true;
-
-    let botoncop=document.getElementById("convertir");
-    botoncop.textContent="cop ($)"
-
     let cantidad=document.getElementById("cantidad").value;
 
     let precioIndividual=document.getElementById("precioUnitarioCarrito");
-    precioIndividual.textContent=`Costo unitario: $${precioproducto} USD`;
+    precioIndividual.textContent=`Costo unitario: $${convertiraPesos(precioproducto)} COP`;
 
     let costoCasillero=document.getElementById("costoCasillero");
-    costoCasillero.textContent=`Costo Casillero: $${calcularCostoCasillero(pesoproducto,cantidad)} USD`;
+    costoCasillero.textContent=`Costo Casillero: $${convertiraPesos(calcularCostoCasillero(pesoproducto,cantidad))} COP`;
 
     let costoImpuestos=document.getElementById("costoImpuestos");
-    costoImpuestos.textContent=`Costo venta(impuestos):$${calcularCostoImpuestos(precioproducto,cantidad)} USD`;
+    costoImpuestos.textContent=`Costo venta(impuestos):$${convertiraPesos(calcularCostoImpuestos(precioproducto,cantidad))}COP`;
 
     let costoTotal=document.getElementById("costoTotal");
-    costoTotal.textContent=`Costo Total: $${(calcularCostoCasillero(pesoproducto,cantidad))+(calcularCostoImpuestos(precioproducto,cantidad))} USD`;
+    costoTotal.textContent=`Costo Total: $${(convertiraPesos(calcularCostoCasillero(pesoproducto,cantidad))+(calcularCostoImpuestos(precioproducto,cantidad)))} COP`;
+    
+    /*convertidor2.classList.remove("invisible")
+    convertidor2.classList.add("visible");*/
+
+    
+
+}
+function convertiraPesos(precioDolares){
+    
+    const TRM=3932; //3932 pesos equivalen a 1 dolar
+    let precioPesos= precioDolares*TRM;
+
+    return precioPesos;
+
+
 
 }
