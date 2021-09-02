@@ -212,11 +212,4 @@ pedidos.forEach(function(pedido){
 
 
 
-   
-
-
-
-   
-
-
 });
